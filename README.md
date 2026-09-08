@@ -4,7 +4,7 @@ A four-page static site for a custom tattoo studio. No build step, no
 dependencies, no framework — open `index.html` and it runs.
 
 ```
-index.html        Home — hero clip, statement, selected work, process, booking
+index.html        Home — hero clip, studio note, selected work, aftercare, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
 about.html        About — bio, background, autograph, studio particulars
 aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
@@ -101,9 +101,9 @@ Fictional placeholders that are live on the site right now:
 | Placeholder | Where |
 | --- | --- |
 | `studio@inkbysantos.com` | Footer, booking form `data-booking`, aftercare CTA |
-| `+1 (312) 555-0148` | Footer (555 numbers are reserved for fiction) |
-| `1147 N. Ashland Ave…` | Footer, JSON-LD in `index.html` |
-| `IL #BA-0000000` | Footer, about page |
+| `+1 (212) 555-0148` | Footer (555 numbers are reserved for fiction) |
+| Studio address | Footer says "full address sent when you book" — add a real one if you want it public |
+| `NYC DOHMH #0000000` | Footer, about page |
 | `Q4 2026 open`, `2–6 weeks` | Hero meta row |
 | `$180 / hour`, `$150` deposit | Booking fineprint, about particulars |
 | Instagram / Flash shop `href="#"` | Footer of all four pages |
