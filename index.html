@@ -46,7 +46,6 @@
 <div class="curtain" aria-hidden="true">
   <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span>
 </div>
-<div class="grain" aria-hidden="true"></div>
 
 <header class="masthead is-top">
   <div class="shell masthead__inner">
@@ -99,10 +98,10 @@
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--solid" href="#book" data-magnet data-cursor="Book">
+          <a class="btn btn--solid" href="#book">
             Book a session<span class="btn__arrow">→</span>
           </a>
-          <a class="btn" href="gallery.html" data-cursor="View">
+          <a class="btn" href="gallery.html">
             See the work<span class="btn__arrow">→</span>
           </a>
         </div>
@@ -115,12 +114,12 @@
       </div>
 
       <div class="hero__plate">
-        <div class="plate plate--video ticks" data-cursor="Play">
+        <div class="plate plate--video ticks">
           <span class="vid">
             <img class="vid__poster" src="assets/video/work-02.jpg"
                  alt="Two fine-line swallows running down a forearm"
                  width="576" height="1024">
-            <video id="hero-clip" data-src="assets/video/work-02.mov"
+            <video id="hero-clip" data-autoplay data-src="assets/video/work-02.mov"
                    poster="assets/video/work-02.jpg" muted loop playsinline
                    preload="none" aria-hidden="true"></video>
           </span>
@@ -142,26 +141,12 @@
     <div class="ticker">
       <div class="ticker__track">
         <div class="ticker__row">
-          <b>Custom work only</b><i>✻</i><b>No flash by the hour</b><i>✻</i>
-          <b>Blackwork</b><i>✻</i><b>Fine line</b><i>✻</i><b>Script</b><i>✻</i>
-          <b>Books open</b><i>✻</i>
+          <b>Appointment only</b><i>&#10038;</i><b>Deposit holds the date</b><i>&#10038;</i>
+          <b>Consultation is free</b><i>&#10038;</i><b>18+ with ID</b><i>&#10038;</i>
         </div>
         <div class="ticker__row">
-          <b>Custom work only</b><i>✻</i><b>No flash by the hour</b><i>✻</i>
-          <b>Blackwork</b><i>✻</i><b>Fine line</b><i>✻</i><b>Script</b><i>✻</i>
-          <b>Books open</b><i>✻</i>
-        </div>
-      </div>
-    </div>
-    <div class="ticker ticker--flip">
-      <div class="ticker__track">
-        <div class="ticker__row">
-          <b>Appointment only</b><i>✻</i><b>Deposit holds the date</b><i>✻</i>
-          <b>Consultation is free</b><i>✻</i><b>18+ with ID</b><i>✻</i>
-        </div>
-        <div class="ticker__row">
-          <b>Appointment only</b><i>✻</i><b>Deposit holds the date</b><i>✻</i>
-          <b>Consultation is free</b><i>✻</i><b>18+ with ID</b><i>✻</i>
+          <b>Appointment only</b><i>&#10038;</i><b>Deposit holds the date</b><i>&#10038;</i>
+          <b>Consultation is free</b><i>&#10038;</i><b>18+ with ID</b><i>&#10038;</i>
         </div>
       </div>
     </div>
@@ -177,8 +162,8 @@
     <div class="shell grid">
       <div class="col-5 col-start-2" data-reveal style="--d:1">
         <p class="prose dropcap">
-          Two chairs, by appointment only. No walk-ins, and no book of pre-drawn
-          flash to pick from. Everything is drawn for the person wearing it.
+          A private home studio, by appointment only. No shop floor, no
+          walk-ins, and no book of pre-drawn flash to pick from.
         </p>
       </div>
       <div class="col-5" data-reveal style="--d:2">
@@ -204,7 +189,7 @@
       </div>
 
       <div class="works">
-        <a class="work work--a" href="gallery.html" data-reveal style="--d:0" data-cursor="View">
+        <a class="work work--a" href="gallery.html" data-reveal style="--d:0">
           <div class="work__frame ticks">
             <span class="work__no">01</span>
             <span class="vid">
@@ -221,7 +206,7 @@
           </div>
         </a>
 
-        <a class="work work--b" href="gallery.html" data-reveal style="--d:1" data-cursor="View">
+        <a class="work work--b" href="gallery.html" data-reveal style="--d:1">
           <div class="work__frame ticks">
             <span class="work__no">02</span>
             <span class="vid">
@@ -238,7 +223,7 @@
           </div>
         </a>
 
-        <a class="work work--c" href="gallery.html" data-reveal style="--d:2" data-cursor="View">
+        <a class="work work--c" href="gallery.html" data-reveal style="--d:2">
           <div class="work__frame ticks">
             <span class="work__no">03</span>
             <span class="vid">
@@ -255,7 +240,7 @@
           </div>
         </a>
 
-        <a class="work work--d" href="gallery.html" data-reveal style="--d:3" data-cursor="View">
+        <a class="work work--d" href="gallery.html" data-reveal style="--d:3">
           <div class="work__frame ticks">
             <span class="work__no">04</span>
             <span class="vid">
@@ -275,7 +260,7 @@
       </div>
 
       <p style="margin-top:clamp(2rem,4vw,3.5rem)">
-        <a class="btn" href="gallery.html" data-cursor="View">
+        <a class="btn" href="gallery.html">
           See all the work<span class="btn__arrow">→</span>
         </a>
       </p>
@@ -290,7 +275,7 @@
         <span class="script" style="font-size:clamp(3rem,10vw,7.5rem);display:block;line-height:.8">the aftermath</span>
         <span class="mono" style="display:block;margin-top:1rem;letter-spacing:.28em">Five phases, six weeks, one job: leave it alone</span>
       </h2>
-      <a class="btn" href="aftercare.html" data-reveal style="--d:2" data-cursor="Read">
+      <a class="btn" href="aftercare.html" data-reveal style="--d:2">
         Aftercare guide<span class="btn__arrow">→</span>
       </a>
     </div>
@@ -343,7 +328,7 @@
             </label>
 
             <div style="display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center">
-              <button class="btn btn--solid" type="submit" data-magnet>
+              <button class="btn btn--solid" type="submit">
                 Send enquiry<span class="btn__arrow">→</span>
               </button>
               <p class="booking__note" style="margin:0">Answered within 3 working days</p>
@@ -385,7 +370,7 @@
     <div class="footer__cols">
       <div class="footer__col">
         <h4>Studio</h4>
-        <p>New York City<br>By appointment only<br><span style="opacity:.7">Full address sent when you book</span></p>
+        <p>Private home studio<br>New York City<br><span style="opacity:.7">Address sent when you book</span></p>
       </div>
       <div class="footer__col">
         <h4>Hours</h4>

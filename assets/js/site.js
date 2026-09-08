@@ -8,7 +8,6 @@
   "use strict";
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const fine = window.matchMedia("(pointer: fine)").matches;
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   const clamp = (n, a, b) => Math.min(Math.max(n, a), b);
@@ -193,90 +192,6 @@
     });
   }
 
-  /* -------------------------------------------------------------- cursor */
-
-  function cursor() {
-    if (!fine || reduced) return;
-    const wrap = document.createElement("div");
-    wrap.className = "cursor";
-    wrap.innerHTML =
-      '<div class="cursor__ring"><span></span></div><div class="cursor__dot"></div>';
-    document.body.appendChild(wrap);
-
-    const ring = $(".cursor__ring", wrap);
-    const dot = $(".cursor__dot", wrap);
-    const label = $("span", ring);
-    let mx = innerWidth / 2;
-    let my = innerHeight / 2;
-    let rx = mx;
-    let ry = my;
-
-    addEventListener(
-      "pointermove",
-      (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-        dot.style.transform = `translate(${mx}px, ${my}px)`;
-
-        const hit = e.target.closest("[data-cursor], a, button");
-        const text = hit?.dataset?.cursor;
-        wrap.classList.toggle("is-active", Boolean(text));
-        label.textContent = text || "";
-      },
-      { passive: true }
-    );
-
-    const loop = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.transform = `translate(${rx}px, ${ry}px)`;
-      requestAnimationFrame(loop);
-    };
-    loop();
-  }
-
-  /* ------------------------------------------------------------ magnetic */
-
-  function magnetic() {
-    if (!fine || reduced) return;
-    $$("[data-magnet]").forEach((el) => {
-      el.addEventListener("pointermove", (e) => {
-        const r = el.getBoundingClientRect();
-        const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
-        const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
-        el.style.transform = `translate(${dx * 9}px, ${dy * 6}px)`;
-      });
-      el.addEventListener("pointerleave", () => {
-        el.style.transform = "";
-      });
-    });
-  }
-
-  /* -------------------------------------------------------- hero parallax */
-
-  function parallax() {
-    const layers = $$("[data-parallax]");
-    if (!layers.length || reduced) return;
-    let ticking = false;
-    const update = () => {
-      const y = window.scrollY;
-      layers.forEach((el) => {
-        const rate = parseFloat(el.dataset.parallax) || 0.06;
-        el.style.transform = `translate3d(0, ${(-y * rate).toFixed(2)}px, 0)`;
-      });
-      ticking = false;
-    };
-    addEventListener(
-      "scroll",
-      () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-      },
-      { passive: true }
-    );
-  }
-
   /* ---------------------------------------------------------------- video */
 
   /* Clips carry their source in data-src and only fetch it once they are on
@@ -284,46 +199,43 @@
      is required for autoplay, and every clip keeps a poster so the artwork
      still shows if the browser cannot decode the codec. */
   function video() {
-    const clips = $$("video[data-src]");
-    if (!clips.length) return;
-
-    const start = (v) => {
+    const setup = (v) => {
       if (!v.src) v.src = v.dataset.src;
-      const done = () => v.classList.add("is-playing");
-      if (v.readyState >= 2) done();
-      else v.addEventListener("loadeddata", done, { once: true });
-      const play = v.play();
-      if (play && play.catch) play.catch(() => {});
+      const shown = () => v.classList.add("is-playing");
+      if (v.readyState >= 2) shown();
+      else v.addEventListener("loadeddata", shown, { once: true });
+      const go = v.play();
+      if (go && go.catch) go.catch(() => {});
     };
 
-    if (reduced || !("IntersectionObserver" in window)) {
-      // Leave the posters in place; no autoplay when motion is unwelcome.
-      return;
-    }
+    // One clip autoplays: the hero. Everything else waits to be asked.
+    const hero = $("video[data-autoplay]");
+    if (hero && !reduced) setup(hero);
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const v = entry.target;
-          if (entry.isIntersecting) start(v);
-          else if (!v.paused) v.pause();
-        });
-      },
-      { rootMargin: "150px 0px", threshold: 0.2 }
-    );
-    clips.forEach((v) => io.observe(v));
+    // Tiles hold their poster until pointed at, then load and play just that
+    // one clip. Touch devices never hover, so they open the lightbox instead.
+    $$(".vid").forEach((wrap) => {
+      const v = $("video[data-src]", wrap);
+      if (!v || v.hasAttribute("data-autoplay")) return;
 
-    // Sound toggles, where offered.
+      wrap.addEventListener("pointerenter", (e) => {
+        if (reduced || e.pointerType === "touch") return;
+        setup(v);
+      });
+      wrap.addEventListener("pointerleave", () => {
+        if (v.paused) return;
+        v.pause();
+        v.classList.remove("is-playing");
+      });
+    });
+
     $$("[data-sound]").forEach((btn) => {
       const target = $(btn.dataset.sound);
       if (!target) return;
       btn.addEventListener("click", () => {
         target.muted = !target.muted;
         btn.textContent = target.muted ? "\u266b" : "\u25cf";
-        btn.setAttribute(
-          "aria-label",
-          target.muted ? "Unmute clip" : "Mute clip"
-        );
+        btn.setAttribute("aria-label", target.muted ? "Unmute clip" : "Mute clip");
         if (!target.muted && target.paused) target.play().catch(() => {});
       });
     });
@@ -572,9 +484,6 @@
     header();
     drawer();
     reveal();
-    cursor();
-    magnetic();
-    parallax();
     gallery();
     video();
     aftercare();

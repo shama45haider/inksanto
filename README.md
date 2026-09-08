@@ -26,9 +26,8 @@ rather than alternating between them.
 - **Type** — Big Shoulders Display (condensed industrial), Spectral (editorial
   serif body), Monsieur La Doulaise + Italianno (the cursive), Space Mono
   (print marks and labels).
-- **Texture** — animated xerox grain, halftone dot fields, torn-paper pane
-  dividers, and a red plate deliberately out of register on the headline
-  (`.mis`).
+- **Texture** — halftone dot fields, torn-paper pane dividers, and a red
+  plate deliberately out of register on the headline (`.mis`).
 
 ## Motion
 
@@ -39,8 +38,8 @@ Every animation checks `prefers-reduced-motion` and turns itself off.
 | Headlines | Rise out of a mask, line by line |
 | Scroll | Blocks fade and lift, staggered by `--d` |
 | Header | Hides going down, returns going up, with a scroll-progress hairline |
-| Tickers | Counter-rotating marquees, paused on hover |
-| Clips | Load and play only while on screen, pause when they leave |
+| Ticker | One flat marquee, paused on hover |
+| Clips | Only the hero autoplays; the rest load and play on hover |
 | Gallery | Red vignette rises on hover; corner ticks extend |
 | About | Autograph wipes in at pen speed, flourish draws underneath |
 | Aftercare | Sticky rail tracks the phase you are reading; progress bar at the foot |
@@ -55,6 +54,11 @@ Three things worth knowing before editing:
 2. **The load curtain lifts in CSS, not JS.** If it depended on a script, a
    blocked or failed script would leave a black sheet over the whole site.
 3. **Clips must stay `muted`** or browsers will refuse to autoplay them.
+4. **Keep it cheap to paint.** An animated full-screen grain layer,
+   `backdrop-filter` on the sticky header, `mix-blend-mode` on the hover
+   washes, a rAF-driven custom cursor and eleven autoplaying HEVC clips were
+   all removed after the site turned sluggish. Decoding several HEVC videos
+   at once was the worst of it. Think twice before adding any of them back.
 
 ## The video, and one thing you should fix
 
