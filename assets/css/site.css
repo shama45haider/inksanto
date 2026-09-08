@@ -617,9 +617,14 @@ select {
 }
 
 /* Burger + mobile drawer */
+/* Flex, not grid: auto grid rows stretch to fill the button, which throws
+   the bar spacing off and stops the X from meeting in the middle. */
 .burger {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   width: 44px;
   height: 44px;
   margin-right: -10px;
@@ -634,10 +639,6 @@ select {
   height: 1.5px;
   background: var(--bone);
   transition: transform 0.45s var(--ease), opacity 0.3s linear;
-}
-
-.burger span + span {
-  margin-top: 6px;
 }
 
 .burger[aria-expanded="true"] span:nth-child(1) {
