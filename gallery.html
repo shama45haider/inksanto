@@ -6,7 +6,7 @@
 <title>The Work — Ink by Santos</title>
 <meta name="description" content="Twelve plates from the Ink by Santos book — blackwork, fine line, ornamental and script tattooing.">
 <meta name="theme-color" content="#0a0a0b">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/logo-icon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=Italianno&family=Monsieur+La+Doulaise&family=Space+Mono:wght@400;700&family=Spectral:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
@@ -23,8 +23,8 @@
 
 <header class="masthead is-top">
   <div class="shell masthead__inner">
-    <a class="mark" href="index.html" aria-label="Ink by Santos, home">
-      <span>Ink</span><span class="mark__by">by</span><span>Santos</span>
+    <a class="mark mark--img" href="index.html" aria-label="Ink by Santos, home">
+      <img class="mark__logo" src="assets/img/logo-mark.png" alt="Get inked by SANTOCHRISSSSS" width="229" height="200">
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="gallery.html" aria-current="page">Work</a>
@@ -40,6 +40,7 @@
 </header>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
+  <img class="drawer__logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true" width="229" height="200">
   <a class="drawer__link" style="--i:0" href="gallery.html"><span>01</span>Work</a>
   <a class="drawer__link" style="--i:1" href="about.html"><span>02</span>About</a>
   <a class="drawer__link" style="--i:2" href="aftercare.html"><span>03</span>Aftercare</a>
@@ -52,15 +53,14 @@
   <section class="pane pane--ink page-head">
     <div class="halftone halftone--radial" aria-hidden="true"></div>
     <div class="shell">
-      <p class="eyebrow" data-reveal>The book — plates 01 to 12</p>
+      <p class="eyebrow" data-reveal>Eleven pieces</p>
       <h1 class="page-head__title" data-reveal style="--d:1">
         The work
         <span class="page-head__script">flash &amp; finished</span>
       </h1>
       <p class="lede page-head__lede" data-reveal style="--d:2">
-        Drawings, stencils and healed pieces. Every design here was made for one
-        person and will not be tattooed again — what you are looking at is the
-        handwriting, not the menu.
+        Finished pieces, work in progress and stencils. Everything here was
+        drawn for the person wearing it.
       </p>
     </div>
   </section>
@@ -69,211 +69,262 @@
     <div class="shell">
       <h2 class="visually-hidden" id="filters-h">Filter the work</h2>
 
-      <div class="filters" role="group" aria-label="Filter by style">
-        <button class="chip" data-filter="all" aria-pressed="true">Everything<sup>12</sup></button>
-        <button class="chip" data-filter="blackwork" aria-pressed="false">Blackwork<sup>05</sup></button>
-        <button class="chip" data-filter="fineline" aria-pressed="false">Fine line<sup>05</sup></button>
-        <button class="chip" data-filter="ornamental" aria-pressed="false">Ornamental<sup>06</sup></button>
-        <button class="chip" data-filter="script" aria-pressed="false">Script<sup>02</sup></button>
+      <div class="filters" role="group" aria-label="Filter the work">
+        <button class="chip" data-filter="all" aria-pressed="true">Everything<sup>11</sup></button>
+        <button class="chip" data-filter="healed" aria-pressed="false">Healed<sup>06</sup></button>
+        <button class="chip" data-filter="progress" aria-pressed="false">In progress<sup>03</sup></button>
+        <button class="chip" data-filter="stencil" aria-pressed="false">Stencils<sup>02</sup></button>
+        <button class="chip" data-filter="lettering" aria-pressed="false">Lettering<sup>02</sup></button>
       </div>
 
       <div class="mason" data-gallery>
 
-        <button class="tile" data-tags="fineline ornamental" data-title="Rosette &amp; Dagger"
-                data-meta="Plate 01 · Fine line · Forearm · 5 hrs" data-full="assets/img/flash-01.svg"
-                data-reveal data-cursor="Open">
+        <button class="tile" data-tags="lettering healed" data-title="Script lettering"
+                data-meta="Script lettering &middot; Forearm" data-video="assets/video/work-01.mov"
+                data-poster="assets/video/work-01.jpg"
+                data-reveal style="--d:0" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-01.svg" alt="Dagger through a fine-line rosette" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-01.jpg" alt="Script lettering on a forearm being wiped down"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-01.mov" poster="assets/video/work-01.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Rosette &amp; Dagger</span>
+            <span class="tile__name">Script lettering</span>
             <span class="tile__no">01</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="blackwork" data-title="Serpent"
-                data-meta="Plate 02 · Blackwork · Spine · 7 hrs" data-full="assets/img/flash-02.svg"
-                data-reveal style="--d:1" data-cursor="Open">
+        <button class="tile" data-tags="fineline healed" data-title="Swallows"
+                data-meta="Swallows &middot; Forearm" data-video="assets/video/work-02.mov"
+                data-poster="assets/video/work-02.jpg"
+                data-reveal style="--d:1" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-02.svg" alt="Serpent descending a ruled column" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-02.jpg" alt="Two fine-line swallows running down a forearm"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-02.mov" poster="assets/video/work-02.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Serpent</span>
+            <span class="tile__name">Swallows</span>
             <span class="tile__no">02</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="fineline ornamental" data-title="Moth"
-                data-meta="Plate 03 · Fine line · Sternum · 4 hrs" data-full="assets/img/flash-03.svg"
-                data-reveal style="--d:2" data-cursor="Open">
+        <button class="tile" data-tags="ornamental healed" data-title="Ornamental"
+                data-meta="Ornamental &middot; Sternum" data-video="assets/video/work-03.mov"
+                data-poster="assets/video/work-03.jpg"
+                data-reveal style="--d:2" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-03.svg" alt="Symmetrical moth over a rose-curve halo" width="1000" height="1000" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-03.jpg" alt="Ornamental lotus and wing linework across a sternum"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-03.mov" poster="assets/video/work-03.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Moth</span>
+            <span class="tile__name">Ornamental</span>
             <span class="tile__no">03</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="blackwork ornamental" data-title="Crescent"
-                data-meta="Plate 04 · Blackwork · Shoulder · 6 hrs" data-full="assets/img/flash-04.svg"
-                data-reveal data-cursor="Open">
+        <button class="tile" data-tags="fineline progress" data-title="Swallows in progress"
+                data-meta="Swallows in progress &middot; Forearm" data-video="assets/video/work-04.mov"
+                data-poster="assets/video/work-04.jpg"
+                data-reveal style="--d:0" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-04.svg" alt="Solid crescent moon inside a radiating burst" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-04.jpg" alt="Swallows being tattooed on a forearm"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-04.mov" poster="assets/video/work-04.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Crescent</span>
+            <span class="tile__name">Swallows in progress</span>
             <span class="tile__no">04</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="ornamental fineline" data-title="Rosace"
-                data-meta="Plate 05 · Ornamental · Thigh · 8 hrs" data-full="assets/img/flash-05.svg"
-                data-reveal style="--d:1" data-cursor="Open">
+        <button class="tile" data-tags="progress" data-title="Wipe down"
+                data-meta="Wipe down &middot; Forearm" data-video="assets/video/work-05.mov"
+                data-poster="assets/video/work-05.jpg"
+                data-reveal style="--d:1" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-05.svg" alt="Layered rose-curve rosette with a solid centre" width="1000" height="1000" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-05.jpg" alt="A fresh piece being wiped down mid-session"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-05.mov" poster="assets/video/work-05.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Rosace</span>
+            <span class="tile__name">Wipe down</span>
             <span class="tile__no">05</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="blackwork" data-title="Providence"
-                data-meta="Plate 06 · Blackwork · Chest · 9 hrs" data-full="assets/img/flash-06.svg"
-                data-reveal style="--d:2" data-cursor="Open">
+        <button class="tile" data-tags="healed" data-title="Ace of spades"
+                data-meta="Ace of spades &middot; Forearm" data-video="assets/video/work-06.mov"
+                data-poster="assets/video/work-06.jpg"
+                data-reveal style="--d:2" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-06.svg" alt="Eye inside a spirograph field above a pediment" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-06.jpg" alt="Ace of spades tattoo in purple and black"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-06.mov" poster="assets/video/work-06.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Providence</span>
+            <span class="tile__name">Ace of spades</span>
             <span class="tile__no">06</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="ornamental" data-title="Knotwork"
-                data-meta="Plate 07 · Ornamental · Calf · 6 hrs" data-full="assets/img/flash-07.svg"
-                data-reveal data-cursor="Open">
+        <button class="tile" data-tags="progress" data-title="In the studio"
+                data-meta="In the studio &middot; Session" data-video="assets/video/work-07.mov"
+                data-poster="assets/video/work-07.jpg"
+                data-reveal style="--d:0" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-07.svg" alt="Interwoven lissajous knot study" width="1000" height="1000" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-07.jpg" alt="Tattooing under a headlamp during a session"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-07.mov" poster="assets/video/work-07.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Knotwork</span>
+            <span class="tile__name">In the studio</span>
             <span class="tile__no">07</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="script ornamental" data-title="Sacred"
-                data-meta="Plate 08 · Script · Ribs · 5 hrs" data-full="assets/img/flash-08.svg"
-                data-reveal style="--d:1" data-cursor="Open">
+        <button class="tile" data-tags="stencil" data-title="Stencil"
+                data-meta="Stencil &middot; Cross" data-video="assets/video/work-08.mov"
+                data-poster="assets/video/work-08.jpg"
+                data-reveal style="--d:1" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-08.svg" alt="Heart in an off-register red pass with a lettering banner" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-08.jpg" alt="Stencil transfer of a cross design on the workstation"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-08.mov" poster="assets/video/work-08.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Sacred</span>
+            <span class="tile__name">Stencil</span>
             <span class="tile__no">08</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="blackwork" data-title="Arch"
-                data-meta="Plate 09 · Blackwork · Ribs · 7 hrs" data-full="assets/img/flash-09.svg"
-                data-reveal style="--d:2" data-cursor="Open">
+        <button class="tile" data-tags="ornamental healed" data-title="Ornamental"
+                data-meta="Ornamental &middot; Hip" data-video="assets/video/work-09.mov"
+                data-poster="assets/video/work-09.jpg"
+                data-reveal style="--d:2" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-09.svg" alt="Engraved arch with radiating rays" width="1400" height="900" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-09.jpg" alt="Small ornamental piece on a hip"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-09.mov" poster="assets/video/work-09.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Arch</span>
+            <span class="tile__name">Ornamental</span>
             <span class="tile__no">09</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="blackwork ornamental" data-title="Blackwork Disc"
-                data-meta="Plate 10 · Solid fill · Shoulder · 10 hrs" data-full="assets/img/flash-10.svg"
-                data-reveal data-cursor="Open">
+        <button class="tile" data-tags="stencil" data-title="Stencil"
+                data-meta="Stencil &middot; Wings" data-video="assets/video/work-10.mov"
+                data-poster="assets/video/work-10.jpg"
+                data-reveal style="--d:0" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-10.svg" alt="Dense blackwork disc over a halftone field" width="1000" height="1000" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-10.jpg" alt="Stencil sheet of a winged design being prepared"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-10.mov" poster="assets/video/work-10.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Blackwork Disc</span>
+            <span class="tile__name">Stencil</span>
             <span class="tile__no">10</span>
           </span>
         </button>
 
-        <button class="tile" data-tags="fineline" data-title="Fine Line Study"
-                data-meta="Plate 11 · Fine line · Ankle · 3 hrs" data-full="assets/img/flash-11.svg"
-                data-reveal style="--d:1" data-cursor="Open">
+        <button class="tile" data-tags="lettering healed" data-title="Script"
+                data-meta="Script &middot; Upper arm" data-video="assets/video/work-11.mov"
+                data-poster="assets/video/work-11.jpg"
+                data-reveal style="--d:1" data-cursor="Play">
           <span class="tile__frame ticks">
-            <img src="assets/img/flash-11.svg" alt="Three fine-line rosettes stacked on a single rule" width="1000" height="1250" loading="lazy">
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-11.jpg" alt="Script lettering beside a circular portrait piece"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-11.mov" poster="assets/video/work-11.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="tile__wash"></span>
             <span class="tile__zoom" aria-hidden="true">+</span>
           </span>
           <span class="tile__meta">
-            <span class="tile__name">Fine Line Study</span>
+            <span class="tile__name">Script</span>
             <span class="tile__no">11</span>
           </span>
         </button>
-
-        <button class="tile" data-tags="script" data-title="Script Banner"
-                data-meta="Plate 12 · Lettering · Sternum · 4 hrs" data-full="assets/img/flash-12.svg"
-                data-reveal style="--d:2" data-cursor="Open">
-          <span class="tile__frame ticks">
-            <img src="assets/img/flash-12.svg" alt="Lettering banner over a woven line study" width="1400" height="900" loading="lazy">
-            <span class="tile__wash"></span>
-            <span class="tile__zoom" aria-hidden="true">+</span>
-          </span>
-          <span class="tile__meta">
-            <span class="tile__name">Script Banner</span>
-            <span class="tile__no">12</span>
-          </span>
-        </button>
-
       </div>
 
       <p class="mono" style="margin-top:clamp(2rem,4vw,3.5rem);color:var(--fg-dim);padding-bottom:var(--bay)">
-        Placeholder plates — swap the files in <b style="color:var(--blood);font-weight:400">assets/img/</b> for photographs, keep the names.
+        Eleven clips &middot; tap any one to play it full size
       </p>
     </div>
   </section>
 
   <section class="pane pane--blood bay--tight">
     <div class="shell" style="display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;justify-content:space-between">
-      <h2 class="script" style="font-size:clamp(2.6rem,8vw,6rem);line-height:.8">Something like this?</h2>
+      <h2 class="script" style="font-size:clamp(2.6rem,8vw,6rem);line-height:.8">Want something like this?</h2>
       <a class="btn" href="index.html#book" data-cursor="Book">Start a piece<span class="btn__arrow">→</span></a>
     </div>
   </section>
 </main>
 
 <!-- ========================================================== LIGHTBOX -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" aria-hidden="true">
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Clip viewer" aria-hidden="true">
   <div class="lightbox__bar">
-    <span data-lb-count>01 / 12</span>
-    <span>Ink by Santos — the book</span>
+    <span data-lb-count>01 / 11</span>
+    <span>Ink by Santos — the work</span>
     <button class="lightbox__close" type="button">Close ✕</button>
   </div>
   <div class="lightbox__stage">
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous plate">←</button>
-    <img src="" alt="">
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next plate">→</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous clip">←</button>
+    <video controls loop playsinline preload="metadata"></video>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next clip">→</button>
   </div>
   <div class="lightbox__foot">
     <p class="lightbox__title"></p>
@@ -283,7 +334,7 @@
 
 <footer class="pane pane--ink footer">
   <div class="shell">
-    <p class="footer__wordmark" aria-hidden="true">Ink by Santos</p>
+    <img class="footer__logo" src="assets/img/logo.png" alt="Get inked by SANTOCHRISSSSS" width="1097" height="959" loading="lazy">
     <div class="footer__cols">
       <div class="footer__col">
         <h4>Studio</h4>

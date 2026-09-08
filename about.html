@@ -6,7 +6,7 @@
 <title>About — Ink by Santos</title>
 <meta name="description" content="Two chairs above a print shop on Ashland. How Santos works, why the wait is what it is, and what happens in the room.">
 <meta name="theme-color" content="#0a0a0b">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/logo-icon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=Italianno&family=Monsieur+La+Doulaise&family=Space+Mono:wght@400;700&family=Spectral:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
@@ -23,8 +23,8 @@
 
 <header class="masthead is-top">
   <div class="shell masthead__inner">
-    <a class="mark" href="index.html" aria-label="Ink by Santos, home">
-      <span>Ink</span><span class="mark__by">by</span><span>Santos</span>
+    <a class="mark mark--img" href="index.html" aria-label="Ink by Santos, home">
+      <img class="mark__logo" src="assets/img/logo-mark.png" alt="Get inked by SANTOCHRISSSSS" width="229" height="200">
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="gallery.html">Work</a>
@@ -40,6 +40,7 @@
 </header>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
+  <img class="drawer__logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true" width="229" height="200">
   <a class="drawer__link" style="--i:0" href="gallery.html"><span>01</span>Work</a>
   <a class="drawer__link" style="--i:1" href="about.html"><span>02</span>About</a>
   <a class="drawer__link" style="--i:2" href="aftercare.html"><span>03</span>Aftercare</a>
@@ -52,14 +53,13 @@
   <section class="pane pane--ink page-head">
     <div class="halftone halftone--radial" aria-hidden="true"></div>
     <div class="shell">
-      <p class="eyebrow" data-reveal>Who is holding the machine</p>
+      <p class="eyebrow" data-reveal>The artist</p>
       <h1 class="page-head__title" data-reveal style="--d:1">
         About
         <span class="page-head__script">the artist</span>
       </h1>
       <p class="lede page-head__lede" data-reveal style="--d:2">
-        Fifteen years in, four clients a week, and still no book of pre-drawn
-        designs to point at.
+        Fifteen years tattooing. Four clients a week. Appointment only.
       </p>
     </div>
   </section>
@@ -75,11 +75,17 @@
         <div class="portrait">
           <span class="portrait__tape" aria-hidden="true"></span>
           <div class="portrait__frame ticks">
-            <img src="assets/img/portrait.svg" alt="Halftone profile portrait placeholder" width="1000" height="1250">
+            <span class="vid" style="aspect-ratio:9/16">
+              <img class="vid__poster" src="assets/video/work-07.jpg"
+                   alt="Tattooing under a headlamp during a session"
+                   width="720" height="1280">
+              <video data-src="assets/video/work-07.mov" poster="assets/video/work-07.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
           </div>
           <p class="portrait__cap">
-            <span>Fig. A — the artist</span>
-            <span>Placeholder</span>
+            <span>In the chair</span>
+            <span>Mid-session</span>
           </p>
         </div>
       </div>
@@ -89,28 +95,18 @@
 
         <div class="prose">
           <p class="dropcap">
-            I started drawing on people at nineteen, in a kitchen, badly, with a
-            machine I had no business owning. The apprenticeship came after — three
-            years of scrubbing tubes and drawing the same rose four hundred times
-            before anyone let me near skin that mattered.
+            I have been tattooing for fifteen years. I work in
+            <strong>blackwork, fine line and ornamental</strong>, and I letter
+            by hand rather than setting it in a font.
           </p>
           <p>
-            That order of events taught me the thing this studio runs on: the
-            drawing is the job. The tattoo is just the last forty minutes of it.
-            By the time a needle is involved the decisions are already made,
-            which is why I take so few clients and spend so long on paper.
+            Every design is drawn for one person and is not used again. I do not
+            copy another artist's work, and I do not keep flash for people to
+            pick from.
           </p>
           <p>
-            I work mostly in <strong>blackwork, fine line and ornamental</strong> —
-            heavy solids next to lines you have to lean in to see. I letter by hand,
-            never from a font. And I turn work away regularly, usually because
-            somebody wants a copy of something they saw on a phone. There are
-            plenty of shops for that. This is not one.
-          </p>
-          <p>
-            The room is two chairs above a print shop on Ashland. It is quiet, it
-            is clean, and the coffee is genuinely bad. Bring a friend if it helps.
-            Bring headphones if it doesn't.
+            I take four clients a week so each piece gets the drawing time it
+            needs. Appointments only — no walk-ins.
           </p>
         </div>
 
@@ -140,7 +136,7 @@
     <div class="shell">
       <div class="rule-head" data-reveal>
         <span class="rule-head__no">01</span>
-        <h2 class="rule-head__title" id="tl-h">The long way round</h2>
+        <h2 class="rule-head__title" id="tl-h">Background</h2>
         <span class="rule-head__meta">2011 — now</span>
       </div>
 
@@ -148,12 +144,8 @@
         <article class="tl" data-reveal>
           <p class="tl__year">2011</p>
           <div class="tl__what">
-            <h3>The kitchen years</h3>
-            <p>
-              Self-taught, which is a polite way of saying badly taught. Two of
-              those early pieces have since been covered up by me, for free, at
-              my insistence.
-            </p>
+            <h3>Started tattooing</h3>
+            <p>Self-taught, and not well. Two of those early pieces I have since covered up for free.</p>
           </div>
         </article>
 
@@ -161,45 +153,31 @@
           <p class="tl__year">2013</p>
           <div class="tl__what">
             <h3>Apprenticeship</h3>
-            <p>
-              Three years under a traditional artist who did not believe in
-              compliments. Learned needle geometry, sterilisation, and how to
-              tell somebody no without making them feel small.
-            </p>
+            <p>Three years in a traditional shop. Needle geometry, sterilisation, and how to turn work down.</p>
           </div>
         </article>
 
         <article class="tl" data-reveal>
           <p class="tl__year">2016</p>
           <div class="tl__what">
-            <h3>The Ashland room</h3>
-            <p>
-              Opened two chairs above a print shop. The halftone dots and
-              registration marks all over this site are borrowed from downstairs
-              — they were on every test sheet in the bin.
-            </p>
+            <h3>Opened the studio</h3>
+            <p>Two chairs, appointment only.</p>
           </div>
         </article>
 
         <article class="tl" data-reveal>
           <p class="tl__year">2021</p>
           <div class="tl__what">
-            <h3>Four clients a week</h3>
-            <p>
-              Cut the schedule in half and doubled the drawing time. The wait got
-              longer, the work got better, and I stopped dreading Mondays.
-            </p>
+            <h3>Cut to four clients a week</h3>
+            <p>Half the schedule, double the drawing time. Longer wait, better work.</p>
           </div>
         </article>
 
         <article class="tl" data-reveal>
           <p class="tl__year">Now</p>
           <div class="tl__what">
-            <h3>Still here</h3>
-            <p>
-              Booking a quarter ahead, guest-spotting twice a year, and teaching
-              one apprentice at a time — properly, the way it was done for me.
-            </p>
+            <h3>Booking a quarter ahead</h3>
+            <p>Two guest spots a year, and one apprentice at a time.</p>
           </div>
         </article>
       </div>
@@ -234,18 +212,15 @@
         <h3 class="display" style="font-size:var(--t-2);margin-bottom:1.2rem">In the room</h3>
         <div class="prose">
           <p>
-            Single-use needles, single-use tubes, single-use everything that
-            touches you. Autoclave logs on the wall, spore tests posted monthly,
-            and an inspection certificate you are welcome to read while I set up.
+            Single-use needles and tubes. Everything that touches you is opened
+            in front of you.
           </p>
           <p>
-            The chair is a proper one, the lighting is boring and correct, and
-            there is a fan because everybody runs hot on the ribs. Water and
-            sugar are free and I will make you take both.
+            Autoclave logs, monthly spore tests and the current inspection
+            certificate are on the wall. Ask to see any of it.
           </p>
           <p>
-            If you need to stop, we stop. Nobody has ever been talked into
-            finishing a session in this studio and nobody is going to be.
+            Water and snacks are free. If you need to stop, we stop.
           </p>
         </div>
 
@@ -260,7 +235,7 @@
 
 <footer class="pane pane--ink footer">
   <div class="shell">
-    <p class="footer__wordmark" aria-hidden="true">Ink by Santos</p>
+    <img class="footer__logo" src="assets/img/logo.png" alt="Get inked by SANTOCHRISSSSS" width="1097" height="959" loading="lazy">
     <div class="footer__cols">
       <div class="footer__col">
         <h4>Studio</h4>

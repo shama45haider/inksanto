@@ -235,60 +235,6 @@
     loop();
   }
 
-  /* ------------------------------------------------------ stencil reveal */
-
-  /* The finished plate is masked away under the pointer, exposing the red
-     stencil beneath — the way a transfer sits on skin before the first line. */
-  function stencil() {
-    const plate = $("[data-stencil]");
-    if (!plate) return;
-    const finished = $(".plate__finished", plate);
-    if (!finished) return;
-
-    const radius = () => clamp(plate.clientWidth * 0.26, 90, 190);
-
-    const move = (e) => {
-      const r = plate.getBoundingClientRect();
-      plate.classList.remove("is-wiping");
-      finished.style.setProperty("--mx", `${((e.clientX - r.left) / r.width) * 100}%`);
-      finished.style.setProperty("--my", `${((e.clientY - r.top) / r.height) * 100}%`);
-      finished.style.setProperty("--r", `${radius()}px`);
-    };
-
-    if (!reduced) {
-      plate.addEventListener("pointermove", move, { passive: true });
-      plate.addEventListener("pointerleave", () => {
-        finished.style.setProperty("--r", "0px");
-      });
-
-      // One unprompted sweep the first time it scrolls into view, so nobody
-      // has to guess the plate is interactive.
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            io.disconnect();
-            setTimeout(() => {
-              plate.classList.add("is-wiping");
-              finished.style.setProperty("--mx", "18%");
-              finished.style.setProperty("--my", "26%");
-              finished.style.setProperty("--r", `${radius()}px`);
-              setTimeout(() => {
-                finished.style.setProperty("--mx", "82%");
-                finished.style.setProperty("--my", "74%");
-              }, 700);
-              setTimeout(() => {
-                finished.style.setProperty("--r", "0px");
-              }, 2100);
-            }, 900);
-          });
-        },
-        { threshold: 0.4 }
-      );
-      io.observe(plate);
-    }
-  }
-
   /* ------------------------------------------------------------ magnetic */
 
   function magnetic() {
@@ -331,6 +277,58 @@
     );
   }
 
+  /* ---------------------------------------------------------------- video */
+
+  /* Clips carry their source in data-src and only fetch it once they are on
+     screen — eleven portrait videos is far too much to load up front. Muted
+     is required for autoplay, and every clip keeps a poster so the artwork
+     still shows if the browser cannot decode the codec. */
+  function video() {
+    const clips = $$("video[data-src]");
+    if (!clips.length) return;
+
+    const start = (v) => {
+      if (!v.src) v.src = v.dataset.src;
+      const done = () => v.classList.add("is-playing");
+      if (v.readyState >= 2) done();
+      else v.addEventListener("loadeddata", done, { once: true });
+      const play = v.play();
+      if (play && play.catch) play.catch(() => {});
+    };
+
+    if (reduced || !("IntersectionObserver" in window)) {
+      // Leave the posters in place; no autoplay when motion is unwelcome.
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const v = entry.target;
+          if (entry.isIntersecting) start(v);
+          else if (!v.paused) v.pause();
+        });
+      },
+      { rootMargin: "150px 0px", threshold: 0.2 }
+    );
+    clips.forEach((v) => io.observe(v));
+
+    // Sound toggles, where offered.
+    $$("[data-sound]").forEach((btn) => {
+      const target = $(btn.dataset.sound);
+      if (!target) return;
+      btn.addEventListener("click", () => {
+        target.muted = !target.muted;
+        btn.textContent = target.muted ? "\u266b" : "\u25cf";
+        btn.setAttribute(
+          "aria-label",
+          target.muted ? "Unmute clip" : "Mute clip"
+        );
+        if (!target.muted && target.paused) target.play().catch(() => {});
+      });
+    });
+  }
+
   /* ------------------------------------------------------------- gallery */
 
   function gallery() {
@@ -361,7 +359,7 @@
   function lightbox(tiles) {
     const box = $(".lightbox");
     if (!box || !tiles.length) return;
-    const img = $(".lightbox__stage img", box);
+    const vid = $(".lightbox__stage video", box);
     const title = $(".lightbox__title", box);
     const tags = $(".lightbox__tags", box);
     const count = $("[data-lb-count]", box);
@@ -371,15 +369,17 @@
     const show = (i) => {
       index = (i + tiles.length) % tiles.length;
       const tile = tiles[index];
-      const src = tile.dataset.full || $("img", tile)?.src;
-      img.classList.remove("is-ready");
-      const next = new Image();
-      next.onload = () => {
-        img.src = src;
-        img.alt = tile.dataset.title || "Tattoo artwork";
-        requestAnimationFrame(() => img.classList.add("is-ready"));
-      };
-      next.src = src;
+
+      if (vid) {
+        vid.pause();
+        vid.removeAttribute("src");
+        vid.poster = tile.dataset.poster || "";
+        vid.src = tile.dataset.video || "";
+        vid.load();
+        const go = vid.play();
+        if (go && go.catch) go.catch(() => {});
+      }
+
       title.textContent = tile.dataset.title || "";
       tags.textContent = tile.dataset.meta || "";
       if (count)
@@ -401,6 +401,11 @@
       box.classList.remove("is-open");
       box.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      if (vid) {
+        vid.pause();
+        vid.removeAttribute("src");
+        vid.load();
+      }
       opener?.focus({ preventScroll: true });
     };
 
@@ -568,10 +573,10 @@
     drawer();
     reveal();
     cursor();
-    stencil();
     magnetic();
     parallax();
     gallery();
+    video();
     aftercare();
     signature();
     bookingForm();

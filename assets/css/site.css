@@ -2626,3 +2626,143 @@ html {
 .work:hover .work__wash {
   opacity: 1;
 }
+
+/* =========================================================== 16 Video ===
+   Clips are portrait phone footage. They load only when they scroll into
+   view, stay muted so autoplay is allowed, and always carry a poster frame
+   so the artwork still shows if the codec is unsupported. */
+
+.vid {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--ink-2);
+  aspect-ratio: 9 / 16;
+}
+
+.vid video,
+.vid img.vid__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vid video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.vid video.is-playing {
+  opacity: 1;
+}
+
+/* Masthead / footer mark */
+.mark__logo {
+  height: clamp(30px, 3.6vw, 42px);
+  width: auto;
+  display: block;
+}
+
+.mark--img {
+  gap: 0;
+}
+
+.drawer__logo {
+  height: 64px;
+  width: auto;
+  margin-bottom: 2rem;
+}
+
+.footer__logo {
+  height: clamp(90px, 12vw, 150px);
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Uniform portrait grid — every clip is 9:16, so columns beat masonry. */
+.mason {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: clamp(1rem, 2vw, 1.8rem);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.tile {
+  margin-bottom: 0;
+}
+
+.tile__frame {
+  aspect-ratio: 9 / 16;
+}
+
+.tile__frame .vid {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+/* Hero plate holds a clip rather than the old stencil pair. */
+.plate--video {
+  aspect-ratio: 9 / 13;
+}
+
+.plate--video .vid {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+}
+
+/* Sound toggle on the hero clip */
+.vid__sound {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 11, 0.7);
+  border: 1px solid var(--rule-strong);
+  color: var(--bone);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  transition: background 0.3s var(--ease);
+}
+
+.vid__sound:hover {
+  background: var(--blood);
+  border-color: var(--blood);
+}
+
+/* Lightbox plays the clip full size with controls. */
+.lightbox__stage video {
+  max-width: min(90vw, 520px);
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(239, 234, 224, 0.18);
+  background: #000;
+}
+
+.work__frame .vid {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+}
+
+/* Selected work on the home page is portrait now, so even spans read better */
+@media (min-width: 700px) {
+  .work--a { grid-column: span 3; }
+  .work--b { grid-column: span 3; margin-top: clamp(2rem, 5vw, 4rem); }
+  .work--c { grid-column: span 3; }
+  .work--d { grid-column: span 3; margin-top: clamp(2rem, 5vw, 4rem); }
+  .work--a .work__frame,
+  .work--b .work__frame,
+  .work--c .work__frame,
+  .work--d .work__frame { aspect-ratio: 9 / 16; }
+}

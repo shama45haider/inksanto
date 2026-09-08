@@ -6,12 +6,12 @@
 <title>Ink by Santos — Custom Tattooing</title>
 <meta name="description" content="Custom tattooing by Santos. One design, one body, never repeated. Blackwork, fine line and script — by appointment, Chicago.">
 <meta name="theme-color" content="#0a0a0b">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/logo-icon.png" type="image/png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ink by Santos — Custom Tattooing">
 <meta property="og:description" content="One design, one body, never repeated. Blackwork, fine line and script, by appointment.">
-<meta property="og:image" content="assets/img/flash-01.svg">
+<meta property="og:image" content="assets/img/og-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
   "@type": "TattooParlor",
   "name": "Ink by Santos",
   "description": "Custom tattooing. One design, one body, never repeated.",
-  "image": "assets/img/flash-01.svg",
+  "image": "assets/img/og-card.jpg",
   "email": "studio@inkbysantos.com",
   "telephone": "+1-312-555-0148",
   "priceRange": "$$$",
@@ -52,8 +52,8 @@
 
 <header class="masthead is-top">
   <div class="shell masthead__inner">
-    <a class="mark" href="index.html" aria-label="Ink by Santos, home">
-      <span>Ink</span><span class="mark__by">by</span><span>Santos</span>
+    <a class="mark mark--img" href="index.html" aria-label="Ink by Santos, home">
+      <img class="mark__logo" src="assets/img/logo-mark.png" alt="Get inked by SANTOCHRISSSSS" width="229" height="200">
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="gallery.html">Work</a>
@@ -69,6 +69,7 @@
 </header>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
+  <img class="drawer__logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true" width="229" height="200">
   <a class="drawer__link" style="--i:0" href="gallery.html"><span>01</span>Work</a>
   <a class="drawer__link" style="--i:1" href="about.html"><span>02</span>About</a>
   <a class="drawer__link" style="--i:2" href="aftercare.html"><span>03</span>Aftercare</a>
@@ -85,7 +86,7 @@
 
     <div class="shell hero__inner">
       <div class="hero__type">
-        <p class="eyebrow hero__eyebrow">Est. 2016 &nbsp;/&nbsp; Chicago, IL &nbsp;/&nbsp; By appointment</p>
+        <p class="eyebrow hero__eyebrow">Custom tattoos &nbsp;/&nbsp; Chicago &nbsp;/&nbsp; By appointment</p>
 
         <h1 data-reveal>
           <span class="visually-hidden">Ink by Santos</span>
@@ -95,8 +96,8 @@
         <span class="hero__script" aria-hidden="true">by</span>
 
         <p class="lede hero__lede">
-          Custom work only. You bring the reason — <strong>I draw the thing</strong>,
-          once, for one body, and then the drawing gets retired.
+          <strong>Custom tattoos only.</strong> You bring the idea, I draw it
+          for you, and the design is never used again.
         </p>
 
         <div class="hero__actions">
@@ -116,12 +117,20 @@
       </div>
 
       <div class="hero__plate">
-        <div class="plate ticks" data-stencil data-cursor="Wipe">
-          <img class="plate__stencil" src="assets/img/hero-stencil.svg" alt="" aria-hidden="true" width="900" height="1150">
-          <img class="plate__finished" src="assets/img/hero-finished.svg" alt="Line drawing of a dagger through an engraved rosette with a banner beneath" width="900" height="1150">
+        <div class="plate plate--video ticks" data-cursor="Play">
+          <span class="vid">
+            <img class="vid__poster" src="assets/video/work-02.jpg"
+                 alt="Two fine-line swallows running down a forearm"
+                 width="576" height="1024">
+            <video id="hero-clip" data-src="assets/video/work-02.mov"
+                   poster="assets/video/work-02.jpg" muted loop playsinline
+                   preload="none" aria-hidden="true"></video>
+          </span>
+          <button class="vid__sound" type="button" data-sound="#hero-clip"
+                  aria-label="Unmute clip">&#9835;</button>
           <p class="plate__cap">
-            <span>Fig. 01 — Rosette &amp; Dagger</span>
-            <span><b>Move across the plate</b> to lift the ink</span>
+            <span>Swallows &mdash; forearm</span>
+            <span><b>Fine line</b>, healed</span>
           </p>
         </div>
       </div>
@@ -169,23 +178,20 @@
     <div class="halftone halftone--up" aria-hidden="true"></div>
     <div class="shell grid">
       <h2 class="statement col-full" id="statement-h" data-reveal>
-        Nothing here is <i>repeated.</i> Every piece is drawn for one body,
-        once — then the drawing goes in the drawer and stays there.
+        Every design is drawn for <i>one</i> person, and never used again.
       </h2>
 
       <div class="col-5 col-start-2" data-reveal style="--d:1">
         <p class="prose dropcap">
-          The studio is two chairs above a print shop on Ashland. It smells like
-          green soap and toner. There is no reception desk, no playlist chosen by
-          a consultant, and no book of pre-drawn designs to point at.
+          Two chairs, by appointment only. No walk-ins, and no book of pre-drawn
+          flash to pick from. Everything is drawn for the person wearing it.
         </p>
       </div>
       <div class="col-5" data-reveal style="--d:2">
         <p class="prose">
-          What there is: a light table, forty years of reference between two
-          shelves, and enough time set aside for your appointment that nobody is
-          watching a clock. I take four clients a week. That is the whole model,
-          and it is why the wait is what it is.
+          I take four clients a week so every piece gets proper drawing time.
+          That is why the wait is a few weeks, and why nobody is watching a
+          clock during your session.
         </p>
         <p style="margin-top:1.6rem">
           <a class="tlink" href="about.html">More about the studio<span aria-hidden="true"> →</span></a>
@@ -200,62 +206,83 @@
       <div class="rule-head" data-reveal>
         <span class="rule-head__no">01</span>
         <h2 class="rule-head__title" id="work-h">Selected work</h2>
-        <span class="rule-head__meta">Plates 01–12</span>
+        <span class="rule-head__meta">Four of eleven</span>
       </div>
 
       <div class="works">
-        <a class="work work--a" href="gallery.html" data-reveal data-cursor="View">
+        <a class="work work--a" href="gallery.html" data-reveal style="--d:0" data-cursor="View">
           <div class="work__frame ticks">
-            <span class="work__no">Plate 09</span>
-            <img src="assets/img/flash-09.svg" alt="Engraved arch with radiating rays, blackwork study" width="1400" height="900" loading="lazy">
+            <span class="work__no">01</span>
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-06.jpg" alt="Ace of spades tattoo in purple and black"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-06.mov" poster="assets/video/work-06.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="work__wash"></span>
           </div>
           <div class="work__meta">
-            <h3 class="work__title">Arch</h3>
-            <span class="work__tag">Blackwork · Ribs</span>
+            <h3 class="work__title">Ace of spades</h3>
+            <span class="work__tag">Forearm</span>
           </div>
         </a>
 
         <a class="work work--b" href="gallery.html" data-reveal style="--d:1" data-cursor="View">
           <div class="work__frame ticks">
-            <span class="work__no">Plate 01</span>
-            <img src="assets/img/flash-01.svg" alt="Dagger through a fine-line rosette" width="1000" height="1250" loading="lazy">
+            <span class="work__no">02</span>
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-03.jpg" alt="Ornamental lotus and wing linework across a sternum"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-03.mov" poster="assets/video/work-03.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="work__wash"></span>
           </div>
           <div class="work__meta">
-            <h3 class="work__title">Rosette &amp; Dagger</h3>
-            <span class="work__tag">Fine line · Forearm</span>
+            <h3 class="work__title">Ornamental</h3>
+            <span class="work__tag">Sternum</span>
           </div>
         </a>
 
-        <a class="work work--c" href="gallery.html" data-reveal data-cursor="View">
+        <a class="work work--c" href="gallery.html" data-reveal style="--d:2" data-cursor="View">
           <div class="work__frame ticks">
-            <span class="work__no">Plate 10</span>
-            <img src="assets/img/flash-10.svg" alt="Dense blackwork disc with halftone field" width="1000" height="1000" loading="lazy">
+            <span class="work__no">03</span>
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-11.jpg" alt="Script lettering on an upper arm"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-11.mov" poster="assets/video/work-11.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="work__wash"></span>
           </div>
           <div class="work__meta">
-            <h3 class="work__title">Blackwork</h3>
-            <span class="work__tag">Solid fill · Shoulder</span>
+            <h3 class="work__title">Script</h3>
+            <span class="work__tag">Upper arm</span>
           </div>
         </a>
 
-        <a class="work work--d" href="gallery.html" data-reveal style="--d:1" data-cursor="View">
+        <a class="work work--d" href="gallery.html" data-reveal style="--d:3" data-cursor="View">
           <div class="work__frame ticks">
-            <span class="work__no">Plate 12</span>
-            <img src="assets/img/flash-12.svg" alt="Script banner over a woven line study" width="1400" height="900" loading="lazy">
+            <span class="work__no">04</span>
+            <span class="vid">
+              <img class="vid__poster" src="assets/video/work-10.jpg" alt="Stencil sheet of a winged design"
+                   width="576" height="1024" loading="lazy">
+              <video data-src="assets/video/work-10.mov" poster="assets/video/work-10.jpg"
+                     muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
             <span class="work__wash"></span>
           </div>
           <div class="work__meta">
-            <h3 class="work__title">Script Banner</h3>
-            <span class="work__tag">Lettering · Sternum</span>
+            <h3 class="work__title">Stencil</h3>
+            <span class="work__tag">Wings</span>
           </div>
         </a>
+
       </div>
 
       <p style="margin-top:clamp(2rem,4vw,3.5rem)">
         <a class="btn" href="gallery.html" data-cursor="View">
-          All twelve plates<span class="btn__arrow">→</span>
+          See all the work<span class="btn__arrow">→</span>
         </a>
       </p>
     </div>
@@ -270,7 +297,7 @@
     <div class="shell">
       <div class="rule-head" data-reveal>
         <span class="rule-head__no">02</span>
-        <h2 class="rule-head__title" id="process-h">How it goes</h2>
+        <h2 class="rule-head__title" id="process-h">How it works</h2>
         <span class="rule-head__meta">Ask → Draw → Sit → Heal</span>
       </div>
 
@@ -280,11 +307,10 @@
           <div class="step__body">
             <h3>The ask</h3>
             <p>
-              Send the idea in your own words. Placement, rough size, and why it
-              matters — that last one does more work than any reference image.
-              I answer every enquiry myself, including the noes.
+              Email me what you want, where it goes, and roughly how big. I read
+              and answer every enquiry myself.
             </p>
-            <span class="step__time">10 minutes of your evening</span>
+            <span class="step__time">10 minutes</span>
           </div>
         </article>
 
@@ -293,9 +319,9 @@
           <div class="step__body">
             <h3>The drawing</h3>
             <p>
-              Deposit books the date and pays for the drawing. You see it once,
-              finished, a few days before we sit. One round of changes is normal.
-              Three means I misheard you, and we start over at no charge.
+              The deposit books your date and pays for the drawing. You see the
+              finished design before we start, and one round of changes is
+              normal.
             </p>
             <span class="step__time">1–3 weeks</span>
           </div>
@@ -306,11 +332,10 @@
           <div class="step__body">
             <h3>The session</h3>
             <p>
-              Eat first. Bring a jumper, headphones, and no hangover. We stencil,
-              you approve the placement in the mirror, and then it is needles and
-              conversation until it is done. Breaks whenever you want them.
+              Eat before you come. We place the stencil, you check it in the
+              mirror, then we tattoo. Take a break whenever you need one.
             </p>
-            <span class="step__time">3–7 hours, one sitting where possible</span>
+            <span class="step__time">3–7 hours, usually one sitting</span>
           </div>
         </article>
 
@@ -319,9 +344,8 @@
           <div class="step__body">
             <h3>The healing</h3>
             <p>
-              You leave with a wrap, a written sheet, and my number. The first two
-              weeks decide how the piece looks for the next forty years, so this
-              part is not optional and it is not complicated.
+              You leave wrapped, with written instructions and my number. The
+              first two weeks matter most.
             </p>
             <span class="step__time"><a class="tlink" href="aftercare.html" style="color:var(--blood)">Read the aftercare →</a></span>
           </div>
@@ -336,7 +360,7 @@
       <p class="eyebrow" data-reveal>The part everybody skips</p>
       <h2 id="care-h" data-reveal style="--d:1">
         <span class="script" style="font-size:clamp(3rem,10vw,7.5rem);display:block;line-height:.8">the aftermath</span>
-        <span class="mono" style="display:block;margin-top:1rem;letter-spacing:.28em">Six weeks, five phases, one job: leave it alone</span>
+        <span class="mono" style="display:block;margin-top:1rem;letter-spacing:.28em">Five phases, six weeks, one job: leave it alone</span>
       </h2>
       <a class="btn" href="aftercare.html" data-reveal style="--d:2" data-cursor="Read">
         Aftercare guide<span class="btn__arrow">→</span>
@@ -360,7 +384,7 @@
             <div class="booking__row booking__row--2">
               <label class="field">
                 <span>Your name</span>
-                <input type="text" name="name" required autocomplete="name" placeholder="Who am I drawing for?">
+                <input type="text" name="name" required autocomplete="name" placeholder="Your name">
               </label>
               <label class="field">
                 <span>Email</span>
@@ -387,7 +411,7 @@
 
             <label class="field">
               <span>The idea — and why it matters</span>
-              <textarea name="idea" rows="5" required placeholder="Plain words beat reference images. Tell me what it is for."></textarea>
+              <textarea name="idea" rows="5" required placeholder="Describe what you want in plain words."></textarea>
             </label>
 
             <div style="display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center">
@@ -404,19 +428,19 @@
           <dl class="fineprint">
             <div>
               <dt>Deposit</dt>
-              <dd>$150, comes off the final price. It pays for drawing time, so it does not come back if you vanish.</dd>
+              <dd>$150, taken off the final price. It pays for drawing time and is not refundable.</dd>
             </div>
             <div style="margin-top:1.4rem">
               <dt>Rate</dt>
-              <dd>$180/hour, or a flat quote for anything over four hours. You get the number before you commit.</dd>
+              <dd>$180 per hour. Anything over four hours gets a flat quote before you commit.</dd>
             </div>
             <div style="margin-top:1.4rem">
               <dt>I will not tattoo</dt>
-              <dd>Anyone under 18, anyone drunk, hands and faces on the underexposed, or another artist's design.</dd>
+              <dd>Under 18s, anyone drunk, or a copy of another artist's design.</dd>
             </div>
             <div style="margin-top:1.4rem">
               <dt>Cover-ups</dt>
-              <dd>Yes, with a photograph first. Some are a fix, some are a laser referral. I will tell you which.</dd>
+              <dd>Yes. Send a photo first — some need laser fading before I can work on them.</dd>
             </div>
           </dl>
         </div>
@@ -428,7 +452,7 @@
 <!-- ============================================================ FOOTER -->
 <footer class="pane pane--ink footer">
   <div class="shell">
-    <p class="footer__wordmark" aria-hidden="true">Ink by Santos</p>
+    <img class="footer__logo" src="assets/img/logo.png" alt="Get inked by SANTOCHRISSSSS" width="1097" height="959" loading="lazy">
 
     <div class="footer__cols">
       <div class="footer__col">
