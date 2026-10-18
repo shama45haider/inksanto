@@ -6,7 +6,7 @@ dependencies, no framework — open `index.html` and it runs.
 ```
 index.html        Home — hero clip, studio note, selected work, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
-lettering.html    Lettering — 11 style references, filterable, image lightbox
+inspiration.html  Get Inspired — 11 style references, filterable, image lightbox
 about.html        About — bio, background, autograph, studio particulars
 aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
 assets/css/site.css       One stylesheet, sectioned and commented
@@ -144,9 +144,9 @@ the `/inksanto/` subpath needs no configuration.
 git push
 ```
 
-## Lettering references
+## Get Inspired
 
-`lettering.html` is a style picker, not a portfolio. Each tile is captioned
+`inspiration.html` is a style picker, not a portfolio. Each tile is captioned
 "Reference" and the page says in plain words that the lettering gets drawn
 fresh — clients quote a number rather than assuming the sheet is finished
 work.
