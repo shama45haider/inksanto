@@ -3031,3 +3031,116 @@ a.chip sup {
 .lightbox__bar {
   font-family: var(--font-mono);
 }
+
+/* ===================================================== 21 Mobile layout ===
+   Single-column grids turned Get Inspired into 32 screens of scrolling on a
+   phone. Two columns halves every media page and keeps each image at a size
+   that still reads. */
+
+@media (max-width: 700px) {
+  /* Get Inspired: two columns, tighter gutters. */
+  .cat__grid {
+    columns: 2;
+    column-gap: 0.6rem;
+  }
+
+  .cat__grid .tile {
+    margin-bottom: 0.6rem;
+  }
+
+  .cat + .cat {
+    margin-top: 2.6rem;
+  }
+
+  /* The clip gallery: two portrait tiles per row. */
+  .mason {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-top: 1.6rem;
+  }
+
+  /* Selected work on the home page: two up rather than four stacked. */
+  .work--a,
+  .work--b,
+  .work--c,
+  .work--d {
+    grid-column: span 6;
+    margin-top: 0;
+  }
+
+  .works {
+    gap: 0.9rem 0.6rem;
+  }
+
+  .work--a .work__frame,
+  .work--b .work__frame,
+  .work--c .work__frame,
+  .work--d .work__frame {
+    aspect-ratio: 9 / 16;
+  }
+
+  .work__meta {
+    padding-top: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  .work__title {
+    font-size: 1rem;
+  }
+
+  .work__tag {
+    display: none;
+  }
+
+  /* The hero clip does not need to be most of the screen. */
+  .plate--video {
+    aspect-ratio: 4 / 5;
+  }
+
+  /* The about portrait was a full-height column on a phone. */
+  .portrait__frame .vid {
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  /* Section rhythm tightens up so the page is not mostly padding. */
+  .bay {
+    padding-block: 3.2rem;
+  }
+
+  .rule-head {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+  }
+}
+
+/* Comfortable tap targets everywhere on touch devices. */
+@media (pointer: coarse) {
+  .nav__link,
+  .footer__col a,
+  .chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .lightbox__nav {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* The inline nav was never hidden below the burger breakpoint, so phones got
+   two navigations at once and the link row ran off the right edge. */
+@media (max-width: 899px) {
+  .nav {
+    display: none;
+  }
+
+  .masthead__inner {
+    justify-content: space-between;
+  }
+
+  .burger {
+    margin-left: auto;
+  }
+}

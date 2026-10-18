@@ -15,7 +15,8 @@ assets/img/               Logo, icon and social card
 assets/img/lettering/     Lettering references (full + thumb)
 assets/img/inspiration/   Everything else, by category (full + thumb)
 assets/video/             The clips and their poster frames
-tools/extract-posters.py  Regenerates poster frames from the clips
+tools/pick-posters.py     Scores frames and picks the best poster per clip
+tools/extract-posters.py  Simpler fixed-timestamp poster grabber
 ```
 
 ## The design
@@ -171,3 +172,22 @@ Pinterest watermark was cropped off one crane design. That is fine as an
 in-shop reference book and riskier as published content on a commercial site —
 replacing them with your own work as you build it up removes the question.
 
+
+## Mobile
+
+Media grids go to two columns under 700px. One column turned Get Inspired
+into 32 screens of scrolling on a 375px phone; two columns brought it to 10,
+the clip gallery from 10.7 to 4.5 and the home page from 5.3 to 4.2.
+
+The inline nav is hidden below 899px. It never was, so phones rendered the
+desktop link row *and* the burger at once, with the links running past the
+right edge. Tap targets are 44px minimum under `pointer: coarse`.
+
+## Poster frames
+
+`python tools/pick-posters.py`, then open <http://localhost:4174/_pick.html>.
+It samples nine frames per clip, rejects the near-black and blown-out ones,
+scores edge energy inside the centre box — tattoo linework is the
+highest-contrast thing in these clips — and keeps the best. Check the result
+by eye afterwards: the scorer picked a paper towel for two clips, so those
+were chosen manually from a candidate sheet.
