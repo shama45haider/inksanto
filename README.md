@@ -6,13 +6,14 @@ dependencies, no framework — open `index.html` and it runs.
 ```
 index.html        Home — hero clip, studio note, selected work, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
-inspiration.html  Get Inspired — 11 style references, filterable, image lightbox
+inspiration.html  Get Inspired — 64 references in 6 categories, image lightbox
 about.html        About — bio, background, autograph, studio particulars
 aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
 assets/css/site.css       One stylesheet, sectioned and commented
 assets/js/site.js         One script, vanilla, every behaviour opt-in
 assets/img/               Logo, icon and social card
-assets/img/lettering/     Lettering style references (full + thumb)
+assets/img/lettering/     Lettering references (full + thumb)
+assets/img/inspiration/   Everything else, by category (full + thumb)
 assets/video/             The clips and their poster frames
 tools/extract-posters.py  Regenerates poster frames from the clips
 ```
@@ -146,17 +147,24 @@ git push
 
 ## Get Inspired
 
-`inspiration.html` is a style picker, not a portfolio. Each tile is captioned
-"Reference" and the page says in plain words that the lettering gets drawn
-fresh — clients quote a number rather than assuming the sheet is finished
-work.
+`inspiration.html` is a style picker, not a portfolio. 64 references in six
+labelled sections — Japanese, Religious & angels, Lettering, Blackwork, Flash
+sheets, Collage & abstract — with a sticky category bar that jumps between
+them. Every tile is numbered so a client can quote a number when booking.
 
-**These images came from elsewhere.** At least two are font-vendor specimen
-sheets, one carrying `expressivefonts.com` branding, and the rest are other
-artists' lettering. That is fine as an in-shop reference book and riskier as
-published content on a commercial site. Replacing them with your own
-lettering as you build it up removes the question entirely.
+Each section flows in CSS columns so mixed aspect ratios keep their own
+proportions. One lightbox serves the whole page and steps across category
+boundaries; a tile with `data-video` plays a clip, one with only `data-full`
+shows a still.
 
-The grid and the lightbox are shared with the gallery. A tile with
-`data-video` plays a clip; a tile with only `data-full` shows a still. One
-lightbox handles both.
+Images are stored twice: a 560px thumbnail for the grid and a 1200px version
+for the lightbox. Regenerate both with the build script in the scratchpad if
+you swap artwork.
+
+**These images came from elsewhere.** Several carry other artists' signatures
+(Giseo tattoo, Bisco tattoo, 967blk, niki_1522tattoo, saint.ink1) and two are
+font-vendor specimen sheets, one with `expressivefonts.com` branding. A
+Pinterest watermark was cropped off one crane design. That is fine as an
+in-shop reference book and riskier as published content on a commercial site —
+replacing them with your own work as you build it up removes the question.
+

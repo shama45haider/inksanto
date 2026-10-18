@@ -2713,3 +2713,110 @@ html {
 .lightbox__stage img {
   background: #fff;
 }
+
+/* ============================================= 18 Inspiration categories ===
+   Six labelled sections rather than one undifferentiated wall. Each flows in
+   columns so the mixed aspect ratios keep their own proportions. */
+
+.cat {
+  scroll-margin-top: calc(clamp(58px, 6.4vw, 76px) + 5.5rem);
+}
+
+.cat + .cat {
+  margin-top: clamp(3.5rem, 8vw, 7rem);
+}
+
+.cat .rule-head {
+  margin-bottom: clamp(1.6rem, 3.5vw, 2.6rem);
+}
+
+.cat__grid {
+  columns: 1;
+  column-gap: clamp(1rem, 2vw, 1.7rem);
+}
+
+@media (min-width: 620px) {
+  .cat__grid { columns: 2; }
+}
+
+@media (min-width: 1000px) {
+  .cat__grid { columns: 3; }
+}
+
+@media (min-width: 1400px) {
+  .cat__grid { columns: 4; }
+}
+
+.cat__grid .tile {
+  break-inside: avoid;
+  display: block;
+  width: 100%;
+  margin: 0 0 clamp(1rem, 2vw, 1.7rem);
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cat__grid .tile__frame {
+  aspect-ratio: auto;
+  background: #fff;
+  display: block;
+}
+
+.cat__grid .tile__frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.9s var(--ease);
+}
+
+.cat__grid .tile:hover .tile__frame img {
+  transform: scale(1.03);
+}
+
+/* Artwork is black on white, so the hover wash reads from the bottom up. */
+.cat__grid .tile__wash {
+  background: linear-gradient(
+    to top,
+    rgba(160, 10, 32, 0.6),
+    rgba(200, 16, 46, 0.14) 58%,
+    transparent 88%
+  );
+}
+
+/* The category bar scrolls with the page and sticks under the header. */
+.filters {
+  gap: 0.45rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+a.chip {
+  text-decoration: none;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+
+a.chip:hover {
+  background: var(--blood);
+  border-color: var(--blood);
+  color: var(--bone);
+}
+
+a.chip sup {
+  font-size: 0.7em;
+  margin-left: 0.35rem;
+  opacity: 0.65;
+}
+
+@media (max-width: 619px) {
+  .filters {
+    position: static;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .chip { flex: none; }
+}
