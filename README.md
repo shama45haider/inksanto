@@ -29,8 +29,9 @@ rather than alternating between them.
 - **Type** — Big Shoulders Display (condensed industrial), Spectral (editorial
   serif body), Monsieur La Doulaise + Italianno (the cursive), Space Mono
   (print marks and labels).
-- **Texture** — halftone dot fields, torn-paper pane dividers, and a red
-  plate deliberately out of register on the headline (`.mis`).
+- **Texture** — torn-paper pane dividers and a red plate deliberately out of
+  register on the headline (`.mis`). Halftone washes, corner ticks, hover
+  washes and zoom badges were all removed: they competed with the artwork.
 
 ## Motion
 
@@ -157,9 +158,10 @@ proportions. One lightbox serves the whole page and steps across category
 boundaries; a tile with `data-video` plays a clip, one with only `data-full`
 shows a still.
 
-Images are stored twice: a 560px thumbnail for the grid and a 1200px version
-for the lightbox. Regenerate both with the build script in the scratchpad if
-you swap artwork.
+Images are stored twice: an 820px thumbnail for the grid and a 1500px version
+for the lightbox, both at quality 84-86. Detailed line art needs resolution
+far more than it needs small files — an earlier pass at 560px/q72 halved the
+weight and made every dotwork piece look soft. Keep the thumbnails large.
 
 **These images came from elsewhere.** Several carry other artists' signatures
 (Giseo tattoo, Bisco tattoo, 967blk, niki_1522tattoo, saint.ink1) and two are
