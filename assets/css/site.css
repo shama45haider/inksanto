@@ -2904,3 +2904,10 @@ a.chip sup {
 .tile__zoom {
   display: none;
 }
+
+/* The legal strip that used to sit under this rule is gone, so the rule has
+   nothing to separate. Close the footer with padding instead. */
+.footer__cols {
+  border-bottom: 0;
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
