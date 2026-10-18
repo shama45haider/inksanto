@@ -41,8 +41,8 @@
   --rule: rgba(239, 234, 224, 0.16);
   --rule-strong: rgba(239, 234, 224, 0.4);
 
-  --font-display: "Big Shoulders Display", "Big Shoulders", "Oswald",
-    "Arial Narrow", sans-serif;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-ui: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-script: "Monsieur La Doulaise", "Italianno", cursive;
   --font-script-2: "Italianno", "Monsieur La Doulaise", cursive;
   --font-body: "Spectral", "Iowan Old Style", Georgia, serif;
@@ -54,8 +54,8 @@
   --t-1: clamp(1.18rem, 1.1rem + 0.4vw, 1.4rem);
   --t-2: clamp(1.5rem, 1.3rem + 0.9vw, 2.1rem);
   --t-3: clamp(2rem, 1.5rem + 2.2vw, 3.4rem);
-  --t-4: clamp(2.8rem, 1.6rem + 5.4vw, 6rem);
-  --t-5: clamp(3.6rem, 0.8rem + 12vw, 11rem);
+  --t-4: clamp(2.3rem, 1.3rem + 4vw, 4.2rem);
+  --t-5: clamp(2.6rem, 0.6rem + 8vw, 7rem);
 
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
   --bay: clamp(4.5rem, 9vw, 9.5rem); /* vertical section rhythm */
@@ -2910,4 +2910,124 @@ a.chip sup {
 .footer__cols {
   border-bottom: 0;
   padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+
+/* ==================================================== 20 Type refresh =====
+   Headings move off the condensed industrial face onto Archivo: wider,
+   heavier and far easier to read at a glance. Buttons and navigation leave
+   the monospace behind for the same family at a lighter weight, with much
+   less letter-spacing. Space Mono stays only for the small print marks. */
+
+.display,
+.rule-head__title,
+.hero__word,
+.page-head__title,
+.phase__title,
+.tile__name,
+.work__title,
+.lightbox__title,
+.drawer__link,
+.faq summary,
+.alert h4,
+.step__no,
+.creds dd,
+.mark {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.display,
+.hero__word,
+.page-head__title {
+  line-height: 0.92;
+}
+
+.rule-head__title,
+.phase__title {
+  line-height: 1;
+}
+
+/* The outlined wordmark was the hardest thing on the site to read: a
+   transparent fill behind a hairline stroke. It is solid now. */
+.hero__word--outline {
+  color: var(--bone);
+  -webkit-text-stroke: 0;
+}
+
+.hero__word--outline .mis::before {
+  -webkit-text-stroke: 0;
+  color: var(--blood);
+}
+
+.display--outline {
+  color: var(--fg);
+  -webkit-text-stroke: 0;
+}
+
+.step__no {
+  color: var(--fg-dim);
+  -webkit-text-stroke: 0;
+}
+
+/* Buttons and nav: readable sans, generous size, barely any tracking. */
+.btn,
+.chip,
+.nav__link,
+.tlink {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-size: clamp(0.84rem, 0.8rem + 0.18vw, 0.95rem);
+  padding: 1rem 1.7rem;
+}
+
+.btn--small {
+  padding: 0.65rem 1.15rem;
+}
+
+.nav__link {
+  font-size: clamp(0.82rem, 0.78rem + 0.18vw, 0.92rem);
+}
+
+.chip {
+  font-size: clamp(0.8rem, 0.76rem + 0.16vw, 0.9rem);
+  padding: 0.6rem 1.05rem;
+}
+
+.chip sup {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+/* The drawer links are set in the display face, which is wider now. */
+.drawer__link {
+  font-size: clamp(2.1rem, 10vw, 3.6rem);
+}
+
+.drawer__link span {
+  font-family: var(--font-mono);
+}
+
+/* Section numbers and small labels stay monospace. */
+.rule-head__no,
+.eyebrow,
+.mono,
+.tile__no,
+.work__tag,
+.plate__cap,
+.portrait__cap,
+.booking__note,
+.footer__col h4,
+.fineprint dt,
+.creds dt,
+.tl__year,
+.phase__no,
+.lightbox__tags,
+.lightbox__bar {
+  font-family: var(--font-mono);
 }
