@@ -4,7 +4,7 @@ A four-page static site for a custom tattoo studio. No build step, no
 dependencies, no framework — open `index.html` and it runs.
 
 ```
-index.html        Home — hero clip, studio note, selected work, aftercare, booking
+index.html        Home — hero clip, studio note, selected work, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
 about.html        About — bio, background, autograph, studio particulars
 aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
@@ -104,14 +104,8 @@ Fictional placeholders that are live on the site right now:
 
 | Placeholder | Where |
 | --- | --- |
-| `studio@inkbysantos.com` | Footer, booking form `data-booking`, aftercare CTA |
-| `+1 (212) 555-0148` | Footer (555 numbers are reserved for fiction) |
 | Studio address | Footer says "full address sent when you book" — add a real one if you want it public |
-| `NYC DOHMH #0000000` | Footer, about page |
-| `Q4 2026 open`, `2–6 weeks` | Hero meta row |
-| `$180 / hour`, `$150` deposit | Booking fineprint, about particulars |
-| Instagram / Flash shop `href="#"` | Footer of all four pages |
-| Background dates and bio | `about.html` |
+| Instagram handle | Removed for now — send it and it goes in the footer |
 
 **Name mismatch:** the logo reads *SANTOCHRISSSSS*, the site text says *Ink by
 Santos*. Pick one and make them agree.
@@ -120,12 +114,14 @@ The aftercare content is real, general guidance for a healthy adult, and says
 so — it carries a "not medical advice" note and a see-a-doctor list. Replace
 the instructions if yours differ; keep the red-flags section.
 
-## The booking form
+## Booking
 
-There is no backend. On submit it composes the enquiry and hands it to the
-visitor's mail client via `mailto:`. To wire a real endpoint, replace the
-`bookingForm()` handler in `assets/js/site.js` with a `fetch()` to your form
-service — the field names are already sensible.
+Booking is a phone call or a text to `(551) 255-5721`. There is no form and
+no backend to maintain. The number appears in the booking block, the footer,
+the mobile drawer and the aftercare page, plus the JSON-LD business listing.
+
+To add Instagram, drop the handle into the footer "Elsewhere" list on all
+four pages.
 
 ## Running it locally
 

@@ -435,48 +435,6 @@
     io.observe(block);
   }
 
-  /* ---------------------------------------------------------------- form */
-
-  /* No backend here. The form composes a well-formed enquiry and hands it to
-     the visitor's mail client. Swap the handler for a real endpoint later. */
-  function bookingForm() {
-    const form = $("[data-booking]");
-    if (!form) return;
-    const status = $("[data-booking-status]", form);
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      const data = new FormData(form);
-      const to = form.dataset.booking;
-      const lines = [];
-      for (const [key, value] of data.entries()) {
-        if (!value) continue;
-        lines.push(`${key.replace(/_/g, " ").toUpperCase()}: ${value}`);
-      }
-      const subject = `Booking enquiry — ${data.get("name") || "no name"}`;
-      const href = `mailto:${to}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(lines.join("\n\n"))}`;
-
-      if (status) {
-        status.hidden = false;
-        status.textContent =
-          "Opening your mail client — if nothing happens, send the same details to " +
-          to;
-      }
-      window.location.href = href;
-    });
-  }
-
-  /* --------------------------------------------------------------- print */
-
-  function printSheet() {
-    $$("[data-print]").forEach((btn) =>
-      btn.addEventListener("click", () => window.print())
-    );
-  }
-
   /* ----------------------------------------------------------------- go */
 
   const boot = () => {
@@ -488,7 +446,6 @@
     video();
     aftercare();
     signature();
-    bookingForm();
     printSheet();
 
     if (document.fonts?.ready) {
