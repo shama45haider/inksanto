@@ -6,11 +6,13 @@ dependencies, no framework — open `index.html` and it runs.
 ```
 index.html        Home — hero clip, studio note, selected work, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
+lettering.html    Lettering — 11 style references, filterable, image lightbox
 about.html        About — bio, background, autograph, studio particulars
 aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
 assets/css/site.css       One stylesheet, sectioned and commented
 assets/js/site.js         One script, vanilla, every behaviour opt-in
 assets/img/               Logo, icon and social card
+assets/img/lettering/     Lettering style references (full + thumb)
 assets/video/             The clips and their poster frames
 tools/extract-posters.py  Regenerates poster frames from the clips
 ```
@@ -141,3 +143,20 @@ the `/inksanto/` subpath needs no configuration.
 ```bash
 git push
 ```
+
+## Lettering references
+
+`lettering.html` is a style picker, not a portfolio. Each tile is captioned
+"Reference" and the page says in plain words that the lettering gets drawn
+fresh — clients quote a number rather than assuming the sheet is finished
+work.
+
+**These images came from elsewhere.** At least two are font-vendor specimen
+sheets, one carrying `expressivefonts.com` branding, and the rest are other
+artists' lettering. That is fine as an in-shop reference book and riskier as
+published content on a commercial site. Replacing them with your own
+lettering as you build it up removes the question entirely.
+
+The grid and the lightbox are shared with the gallery. A tile with
+`data-video` plays a clip; a tile with only `data-full` shows a still. One
+lightbox handles both.

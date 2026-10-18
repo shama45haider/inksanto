@@ -2656,3 +2656,60 @@ html {
   .work--c .work__frame,
   .work--d .work__frame { aspect-ratio: 9 / 16; }
 }
+
+/* ===================================================== 17 Lettering ====
+   Reference sheets come in mixed aspect ratios, so this grid flows in
+   columns rather than forcing every tile to the clips' 9:16. */
+
+.mason--auto {
+  display: block;
+  columns: 1;
+  column-gap: clamp(1rem, 2vw, 1.8rem);
+}
+
+@media (min-width: 640px) {
+  .mason--auto { columns: 2; }
+}
+
+@media (min-width: 1150px) {
+  .mason--auto { columns: 3; }
+}
+
+.mason--auto .tile {
+  break-inside: avoid;
+  display: block;
+  width: 100%;
+  margin-bottom: clamp(1rem, 2vw, 1.8rem);
+}
+
+.mason--auto .tile__frame {
+  aspect-ratio: auto;
+  background: #fff;
+}
+
+.mason--auto .tile__frame img {
+  width: 100%;
+  height: auto;
+}
+
+/* Lettering art is black on white, so the red hover wash reads better
+   lightened rather than darkened. */
+.mason--auto .tile__wash {
+  background: linear-gradient(
+    to top,
+    rgba(200, 16, 46, 0.5),
+    rgba(200, 16, 46, 0.12) 60%,
+    transparent 90%
+  );
+}
+
+/* The lightbox carries both an image and a video; whichever the tile needs
+   is shown. The base reset sets display on img/video, which would beat the
+   hidden attribute without this. */
+.lightbox__stage [hidden] {
+  display: none !important;
+}
+
+.lightbox__stage img {
+  background: #fff;
+}

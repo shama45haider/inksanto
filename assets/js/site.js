@@ -272,6 +272,7 @@
     const box = $(".lightbox");
     if (!box || !tiles.length) return;
     const vid = $(".lightbox__stage video", box);
+    const img = $(".lightbox__stage img", box);
     const title = $(".lightbox__title", box);
     const tags = $(".lightbox__tags", box);
     const count = $("[data-lb-count]", box);
@@ -282,14 +283,40 @@
       index = (i + tiles.length) % tiles.length;
       const tile = tiles[index];
 
+      // A tile is either a clip or a still; show whichever it carries.
+      const clip = tile.dataset.video;
+      const still = tile.dataset.full;
+
       if (vid) {
         vid.pause();
         vid.removeAttribute("src");
-        vid.poster = tile.dataset.poster || "";
-        vid.src = tile.dataset.video || "";
-        vid.load();
-        const go = vid.play();
-        if (go && go.catch) go.catch(() => {});
+        if (clip) {
+          vid.hidden = false;
+          vid.poster = tile.dataset.poster || "";
+          vid.src = clip;
+          vid.load();
+          const go = vid.play();
+          if (go && go.catch) go.catch(() => {});
+        } else {
+          vid.hidden = true;
+          vid.load();
+        }
+      }
+
+      if (img) {
+        if (still && !clip) {
+          img.hidden = false;
+          img.classList.remove("is-ready");
+          const pre = new Image();
+          pre.onload = () => {
+            img.src = still;
+            img.alt = tile.dataset.title || "Lettering reference";
+            requestAnimationFrame(() => img.classList.add("is-ready"));
+          };
+          pre.src = still;
+        } else {
+          img.hidden = true;
+        }
       }
 
       title.textContent = tile.dataset.title || "";
@@ -433,6 +460,15 @@
       { threshold: 0.35 }
     );
     io.observe(block);
+  }
+
+  /* ---------------------------------------------------------------- print */
+
+  /* The aftercare sheet is meant to be printed and stuck on a fridge. */
+  function printSheet() {
+    $$("[data-print]").forEach((btn) =>
+      btn.addEventListener("click", () => window.print())
+    );
   }
 
   /* ----------------------------------------------------------------- go */
