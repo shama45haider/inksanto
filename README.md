@@ -149,9 +149,10 @@ git push
 ## Get Inspired
 
 `inspiration.html` is a style picker, not a portfolio. 64 references in six
-labelled sections — Japanese, Religious & angels, Lettering, Blackwork, Flash
-sheets, Collage & abstract — with a sticky category bar that jumps between
-them. Every tile is numbered so a client can quote a number when booking.
+labelled sections — Japanese, Religious, Blackwork, Lettering, Collage, Flash
+sheets — with a sticky category bar that jumps between them. Tiles carry no
+caption at all: the artwork is the content. Names still show in the lightbox
+and in each image's alt text.
 
 Each section flows in CSS columns so mixed aspect ratios keep their own
 proportions. One lightbox serves the whole page and steps across category
