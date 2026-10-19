@@ -1903,270 +1903,6 @@ select {
   padding-block: clamp(1rem, 3vw, 2rem);
 }
 
-/* --------------------------------------------------------- 11 Aftercare */
-
-.care {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: start;
-}
-
-@media (min-width: 1000px) {
-  .care {
-    grid-template-columns: minmax(200px, 260px) 1fr;
-    gap: clamp(2.5rem, 6vw, 6rem);
-  }
-}
-
-.care__rail {
-  position: static;
-}
-
-@media (min-width: 1000px) {
-  .care__rail {
-    position: sticky;
-    top: calc(clamp(58px, 6.4vw, 76px) + 2.5rem);
-  }
-}
-
-.care__rail ol {
-  list-style: none;
-  padding: 0;
-  margin: 1.2rem 0 0;
-  border-left: 1px solid var(--rule);
-}
-
-.care__rail a {
-  display: block;
-  padding: 0.62rem 0 0.62rem 1.1rem;
-  margin-left: -1px;
-  border-left: 1px solid transparent;
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--fg-dim);
-  transition: color 0.35s var(--ease), border-color 0.35s var(--ease),
-    padding-left 0.35s var(--ease);
-}
-
-.care__rail a:hover {
-  color: var(--fg);
-  padding-left: 1.4rem;
-}
-
-.care__rail a.is-active {
-  color: var(--blood);
-  border-left-color: var(--blood);
-}
-
-.care__rail a b {
-  display: block;
-  font-weight: 400;
-  color: inherit;
-  opacity: 0.55;
-  font-size: 0.82em;
-  letter-spacing: 0.12em;
-}
-
-.phase {
-  scroll-margin-top: calc(clamp(58px, 6.4vw, 76px) + 2rem);
-  padding-bottom: clamp(2.5rem, 6vw, 5rem);
-}
-
-.phase + .phase {
-  padding-top: clamp(2rem, 4vw, 3.5rem);
-  border-top: 1px solid var(--rule);
-}
-
-.phase__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.6rem 1.4rem;
-  margin-bottom: 1.4rem;
-}
-
-.phase__no {
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.13em;
-  color: var(--blood);
-}
-
-.phase__title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: var(--t-3);
-  line-height: 0.9;
-}
-
-.phase__when {
-  font-family: var(--font-script-2);
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  line-height: 0.8;
-  color: var(--blood);
-  text-transform: none;
-}
-
-.dodont {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  margin-top: clamp(1.5rem, 3vw, 2.2rem);
-}
-
-@media (min-width: 760px) {
-  .dodont {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.dodont section {
-  border-top: 2px solid currentColor;
-  padding-top: 0.9rem;
-}
-
-.dodont h4 {
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  margin-bottom: 0.9rem;
-}
-
-.dodont ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 0.65rem;
-}
-
-/* Marker is positioned, not a grid cell — a grid list item would promote
-   every inline <strong> into its own cell and break the sentence apart. */
-.dodont li {
-  position: relative;
-  padding-left: 1.6em;
-  line-height: 1.5;
-  color: var(--fg-dim);
-}
-
-.dodont li::before {
-  content: "+";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-family: var(--font-mono);
-  color: currentColor;
-  line-height: 1.5;
-}
-
-.dodont .dont {
-  color: var(--blood);
-}
-
-.dodont .dont li::before {
-  content: "\00d7";
-}
-
-.dodont .do li strong,
-.dodont .dont li strong {
-  color: var(--fg);
-  font-weight: 600;
-}
-
-.alert {
-  border: 1px solid var(--blood);
-  padding: clamp(1.2rem, 3vw, 2rem);
-  margin-top: clamp(1.5rem, 3vw, 2.4rem);
-  position: relative;
-  background: color-mix(in srgb, var(--blood) 8%, transparent);
-}
-
-.alert h4 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: var(--t-2);
-  line-height: 1;
-  color: var(--blood);
-  margin-bottom: 0.8rem;
-}
-
-.alert ul {
-  margin: 0;
-  padding-left: 1.1rem;
-  display: grid;
-  gap: 0.45rem;
-}
-
-.alert li::marker {
-  color: var(--blood);
-}
-
-.faq {
-  border-top: 1px solid var(--rule);
-}
-
-.faq details {
-  border-bottom: 1px solid var(--rule);
-}
-
-.faq summary {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-block: clamp(1rem, 2.2vw, 1.5rem);
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: var(--t-1);
-  line-height: 1.1;
-  transition: color 0.3s var(--ease);
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq summary::after {
-  content: "+";
-  margin-left: auto;
-  font-family: var(--font-mono);
-  color: var(--blood);
-  font-size: 1.2em;
-  transition: transform 0.45s var(--ease);
-}
-
-.faq details[open] summary::after {
-  transform: rotate(45deg);
-}
-
-.faq summary:hover {
-  color: var(--blood);
-}
-
-.faq__body {
-  padding-bottom: 1.4rem;
-  color: var(--fg-dim);
-  max-width: 68ch;
-}
-
-.care__progress {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  background: var(--blood);
-  width: 100%;
-  transform: scaleX(var(--cp, 0));
-  transform-origin: left;
-  z-index: 200;
-}
-
 /* --------------------------------------------------------- 12 Footer */
 
 .footer {
@@ -2371,8 +2107,6 @@ select {
   .curtain,
   .ticker,
   .footer,
-  .care__rail,
-  .care__progress,
   .no-print {
     display: none !important;
   }
@@ -2383,14 +2117,7 @@ select {
     color: #000 !important;
   }
 
-  .phase {
-    page-break-inside: avoid;
-    padding-bottom: 1.2rem;
-  }
 
-  .alert {
-    border: 2px solid #000;
-  }
 
   a[href^="http"]::after {
     content: " (" attr(href) ")";
@@ -3143,4 +2870,71 @@ a.chip sup {
   .burger {
     margin-left: auto;
   }
+}
+
+/* ================================================= 22 Footer & contrast ===
+   Every pane on the home page had ended up the same near-black, so the page
+   read as one flat slab. The booking block is bone now, which puts light
+   between the dark work grid and the dark footer. */
+
+/* ---- Footer: far more compact on a phone ---- */
+@media (max-width: 700px) {
+  .footer__logo {
+    height: 64px;
+    margin-bottom: 1.1rem;
+  }
+
+  .footer__cols {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    padding-block: 1.6rem;
+  }
+
+  .footer__col h4 {
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .footer__col p,
+  .footer__col ul {
+    line-height: 1.45;
+    font-size: 0.95rem;
+  }
+
+  .footer__col ul {
+    gap: 0.2rem;
+  }
+
+  /* The phone number is the one thing anybody needs down here. */
+  .footer__col:last-child a {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+}
+
+/* Footer on a phone: two columns for the detail, the number on its own row
+   at a size worth tapping. */
+@media (max-width: 700px) {
+  .footer__cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 1rem;
+  }
+
+  .footer__col:last-child {
+    grid-column: 1 / -1;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
+}
+
+/* Clip tiles sit on bone now, so the frame needs a light-ground border and
+   the caption needs the pane's own foreground rather than bone-on-bone. */
+.pane--bone .tile__frame {
+  border-color: rgba(10, 10, 11, 0.14);
+  background: var(--ink-2);
+}
+
+.pane--bone .tile:hover .tile__frame {
+  border-color: var(--blood);
 }

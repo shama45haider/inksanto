@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Italianno&family=Monsieur+La+Doulaise&family=Space+Mono:wght@400;700&family=Spectral:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=697d04ea">
+<link rel="stylesheet" href="assets/css/site.css?v=19fee1ce">
 </head>
 
 <body>
@@ -29,7 +29,6 @@
       <a class="nav__link" href="gallery.html" aria-current="page">Work</a>
       <a class="nav__link" href="about.html">About</a>
       <a class="nav__link" href="inspiration.html">Get Inspired</a>
-      <a class="nav__link" href="aftercare.html">Aftercare</a>
       <a class="btn btn--small nav__cta" href="index.html#book">Book<span class="btn__arrow">→</span></a>
     </nav>
     <button class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
@@ -44,8 +43,7 @@
   <a class="drawer__link" style="--i:0" href="gallery.html">Work</a>
   <a class="drawer__link" style="--i:1" href="about.html">About</a>
   <a class="drawer__link" style="--i:2" href="inspiration.html">Get Inspired</a>
-  <a class="drawer__link" style="--i:3" href="aftercare.html">Aftercare</a>
-  <a class="drawer__link" style="--i:4" href="index.html#book">Book</a>
+  <a class="drawer__link" style="--i:3" href="index.html#book">Book</a>
   <p class="mono drawer__foot">By appointment · NYC<br><a href="tel:+15512555721">(551) 255-5721</a></p>
 </nav>
 
@@ -66,7 +64,11 @@
     </div>
   </section>
 
-  <section class="pane pane--ink" aria-labelledby="filters-h">
+  <div class="tear" style="background:var(--ink)" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path fill="#efeae0" d="M0 40V22l31-9 27 11 24-13 35 8 22-11 29 12 26-7 33 10 21-12 30 9 25-10 34 12 23-8 28 11 26-13 32 9 22-10 29 11 27-7 31 10 24-12 28 9 26-9 33 11 22-8 29 10 25-11 32 9 23-7 30 10 26-9 34 11 21-8 28 10V40Z"/></svg>
+  </div>
+
+  <section class="pane pane--bone bay" aria-labelledby="filters-h">
     <div class="shell">
       <h2 class="visually-hidden" id="filters-h">Filter the work</h2>
 
@@ -296,12 +298,6 @@
     </div>
   </section>
 
-  <section class="pane pane--blood bay--tight">
-    <div class="shell" style="display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;justify-content:space-between">
-      <h2 class="script" style="font-size:clamp(2.6rem,8vw,6rem);line-height:.8">Want something like this?</h2>
-      <a class="btn" href="index.html#book">Start a piece<span class="btn__arrow">→</span></a>
-    </div>
-  </section>
 </main>
 
 <!-- ========================================================== LIGHTBOX -->
@@ -328,11 +324,11 @@
     <div class="footer__cols">
       <div class="footer__col">
         <h4>Studio</h4>
-        <p>Private home studio<br>New York City<br><span style="opacity:.7">Address sent when you book</span></p>
+        <p>Private home studio<br>New York City<br><span style="opacity:.7">Address on booking</span></p>
       </div>
       <div class="footer__col">
         <h4>Hours</h4>
-        <p>By appointment only<br>One client at a time<br>No walk-ins, ever</p>
+        <p>By appointment only<br>No walk-ins</p>
       </div>
       <div class="footer__col">
         <h4>Contact</h4>
@@ -340,17 +336,10 @@
           <li><a href="tel:+15512555721">(551) 255-5721</a></li>
         </ul>
       </div>
-      <div class="footer__col">
-        <h4>Elsewhere</h4>
-        <ul>
-          <li><a href="inspiration.html">Get Inspired</a></li>
-          <li><a href="aftercare.html">Aftercare</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=151ce257" defer></script>
+<script src="assets/js/site.js?v=67400b31" defer></script>
 </body>
 </html>

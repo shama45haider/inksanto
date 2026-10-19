@@ -4,11 +4,10 @@ A four-page static site for a custom tattoo studio. No build step, no
 dependencies, no framework — open `index.html` and it runs.
 
 ```
-index.html        Home — hero clip, studio note, selected work, booking
+index.html        Home — hero clip, selected work, booking
 gallery.html      The Work — 11 clips, filterable, with a video lightbox
 inspiration.html  Get Inspired — 64 references in 6 categories, image lightbox
 about.html        About — bio, background, autograph, studio particulars
-aftercare.html    Aftercare — 5 healing phases, red flags, FAQ, printable
 assets/css/site.css       One stylesheet, sectioned and commented
 assets/js/site.js         One script, vanilla, every behaviour opt-in
 assets/img/               Logo, icon and social card
@@ -47,8 +46,11 @@ Every animation checks `prefers-reduced-motion` and turns itself off.
 | Clips | Only the hero autoplays; the rest load and play on hover |
 | Gallery | Red vignette rises on hover; corner ticks extend |
 | About | Autograph wipes in at pen speed, flourish draws underneath |
-| Aftercare | Sticky rail tracks the phase you are reading; progress bar at the foot |
 | Navigation | Curtain drops between pages |
+
+Panes alternate ink and bone deliberately. With every bone and blood section
+stripped out, the home page became one flat near-black slab that read as
+broken on a wide screen — keep at least one light pane per page.
 
 Three things worth knowing before editing:
 
@@ -114,10 +116,6 @@ Fictional placeholders that are live on the site right now:
 
 **Name mismatch:** the logo reads *SANTOCHRISSSSS*, the site text says *Ink by
 Santos*. Pick one and make them agree.
-
-The aftercare content is real, general guidance for a healthy adult, and says
-so — it carries a "not medical advice" note and a see-a-doctor list. Replace
-the instructions if yours differ; keep the red-flags section.
 
 ## Booking
 

@@ -384,53 +384,6 @@
     });
   }
 
-  /* ----------------------------------------------------------- aftercare */
-
-  function aftercare() {
-    const phases = $$(".phase");
-    const links = $$(".care__rail a");
-    const bar = $(".care__progress");
-    if (!phases.length) return;
-
-    if ("IntersectionObserver" in window && links.length) {
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const id = entry.target.id;
-            links.forEach((a) =>
-              a.classList.toggle("is-active", a.getAttribute("href") === `#${id}`)
-            );
-          });
-        },
-        { rootMargin: "-30% 0px -58% 0px" }
-      );
-      phases.forEach((p) => io.observe(p));
-    }
-
-    if (bar) {
-      const zone = $(".care");
-      let ticking = false;
-      const update = () => {
-        const r = zone.getBoundingClientRect();
-        const total = r.height - window.innerHeight;
-        const done = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
-        bar.style.setProperty("--cp", done);
-        ticking = false;
-      };
-      update();
-      addEventListener(
-        "scroll",
-        () => {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(update);
-        },
-        { passive: true }
-      );
-    }
-  }
-
   /* ----------------------------------------------------------- signature */
 
   /* The autograph is hidden with clip-path, which zeroes its intersection
@@ -462,15 +415,6 @@
     io.observe(block);
   }
 
-  /* ---------------------------------------------------------------- print */
-
-  /* The aftercare sheet is meant to be printed and stuck on a fridge. */
-  function printSheet() {
-    $$("[data-print]").forEach((btn) =>
-      btn.addEventListener("click", () => window.print())
-    );
-  }
-
   /* ----------------------------------------------------------------- go */
 
   const boot = () => {
@@ -480,9 +424,7 @@
     reveal();
     gallery();
     video();
-    aftercare();
     signature();
-    printSheet();
 
     if (document.fonts?.ready) {
       document.fonts.ready.then(splitLines);
